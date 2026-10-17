@@ -1,0 +1,14 @@
+# Test profile.
+# Mock auth on — no Keycloak in tests, same as every Helex module.
+auth:
+  mock:
+    enabled: true
+
+# Testcontainers' PostgreSQL runs as user `test`; the core changelog GRANTs to
+# ${app-username}/${viewer-username}, and a role that does not exist fails the
+# migration. Point both at the container user.
+spring:
+  liquibase:
+    parameters:
+      app-username: test
+      viewer-username: test

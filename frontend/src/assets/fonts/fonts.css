@@ -1,0 +1,30 @@
+/*
+ * Proxima Nova — the TalTech corporate typeface (CVI 2022), converted to
+ * woff2 from the TalTech-licensed desktop fonts. Two weights are enough:
+ * CSS font matching resolves 500/600 to the 700 face automatically, and
+ * Verdana is the CVI's own fallback (see the theme's fontFamily stack).
+ *
+ * License note: Proxima Nova (Mark Simonson Studio) is licensed to TalTech;
+ * these files are here for use in this TalTech course project only.
+ */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./ProximaNova-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./ProximaNova-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bind everything OUTSIDE antd components to the active theme's typeface too —
+   antd gets it via the ConfigProvider token, bare elements do not inherit it. */
+body {
+  font-family: var(--helex-font-family, Verdana, system-ui, sans-serif);
+}
