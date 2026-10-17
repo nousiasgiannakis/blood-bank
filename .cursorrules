@@ -1,0 +1,6 @@
+# Cursor rules — ITE4120 template (legacy entry point)
+
+Read AGENTS.md at the repository root. It is the complete contract for every AI
+coding agent working here; this file only points there, and AGENTS.md wins on
+any conflict. Current Cursor versions load the same pointer from
+.cursor/rules/agent-contract.mdc.

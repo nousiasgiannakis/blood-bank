@@ -1,0 +1,9 @@
+# Local development profile (run with --spring.profiles.active=local — the scripts do).
+# Committed on purpose: it contains no secrets, only dev switches.
+auth:
+  mock:
+    enabled: true          # Authorization: Bearer <any-username> signs you in
+
+animals:
+  owner-registry:
+    mock-server: true      # this app serves /mock-registry itself — works offline
