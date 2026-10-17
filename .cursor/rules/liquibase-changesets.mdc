@@ -1,0 +1,15 @@
+---
+description: Formatted-SQL changeset grammar and layout — `--` belongs to Liquibase, released changesets are immutable.
+globs: backend/src/main/resources/**/db/changelog/**/*.sql,backend/src/main/resources/**/db/changelog/**/*.xml
+alwaysApply: false
+---
+
+Rules: [AGENTS.md](mdc:AGENTS.md) § Process rules 5–6. Worked example, changeset
+by changeset: [docs/src/liquibase-guide.md](mdc:docs/src/liquibase-guide.md).
+Every file under `animals/db/changelog/` is the reference shape.
+
+Check before committing — it fails closed:
+
+```bash
+scripts/check-changesets.sh
+```

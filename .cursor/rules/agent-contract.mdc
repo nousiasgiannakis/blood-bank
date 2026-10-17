@@ -1,0 +1,16 @@
+---
+description: ITE4120 agent contract — process rules, architecture conventions, known pitfalls, verification before a PR. Hard contract on every file Cursor touches.
+alwaysApply: true
+---
+
+Full contract: [AGENTS.md](mdc:AGENTS.md). Every rule lives there; this file
+only points at it. `AGENTS.md` wins on any conflict.
+
+**Quick reference** (headlines only — the text in AGENTS.md is the rule)
+- Spec first: no implementation before a confirmed spec in `docs/src/specifications/`
+- Tests second: the spec's business tests become executable tests before the code
+- Update the spec in the same PR when the implementation settles differently
+- Never commit to `main` — branch, PR, review
+- Never edit a released Liquibase changeset — append one
+- Controller → service → repository; errors as `application/problem+json`; identifiers are strings
+- Before a PR: `./gradlew test`, `npx tsc -b`, `scripts/check-changesets`, and the flow in the browser

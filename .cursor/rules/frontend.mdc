@@ -1,0 +1,15 @@
+---
+description: React frontend on @helex/ui — every input is an existing @helex/ui or antd component; pages under frontend/src/pages.
+globs: frontend/src/**/*.tsx,frontend/src/**/*.ts
+alwaysApply: false
+---
+
+Rules: [AGENTS.md](mdc:AGENTS.md) § Architecture conventions (UI) and § Known
+pitfalls (two Reacts, `MockAuthProvider` probes, `useAppNotification` identity).
+Reference pages: `frontend/src/pages/AnimalList.tsx`, `AnimalCreate.tsx`.
+
+Typecheck before a PR:
+
+```bash
+cd frontend && npx tsc -b
+```

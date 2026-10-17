@@ -1,0 +1,92 @@
+/* TalTech theme for the documentation book — same CVI 2022 tokens as the
+   application theme (frontend/src/theme/taltech.ts) and the slide decks:
+   navy #342b60, magenta #e4067e, burgundy #aa1352, cyan #4dbed2. */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('fonts/ProximaNova-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('fonts/ProximaNova-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --taltech-navy: #342b60;
+  --taltech-magenta: #e4067e;
+  --taltech-burgundy: #aa1352;
+  --taltech-cyan: #4dbed2;
+}
+
+.light, html:not(.js) {
+  --bg: #ffffff;
+  --fg: #25262c;
+  --sidebar-bg: #342b60;
+  --sidebar-fg: #cccad7;
+  --sidebar-active: #ffffff;
+  --sidebar-non-existant: #6c6491;
+  --sidebar-header-border-color: #453b78;
+  --scrollbar: #9396b0;
+  --icons: #6e7184;
+  --icons-hover: #342b60;
+  --links: #aa1352;
+  --inline-code-color: #aa1352;
+  --theme-hover: #ededf2;
+  --quote-bg: #f6f6f8;
+  --quote-border: #dadae4;
+  --table-border-color: #dadae4;
+  --table-header-bg: #f6f6f8;
+  --table-alternate-bg: #fbfbfc;
+  --searchbar-bg: #f6f6f8;
+  --searchbar-border-color: #dadae4;
+  --search-mark-bg: #f9c7de;
+}
+
+html, body {
+  font-family: 'Proxima Nova', Verdana, system-ui, sans-serif;
+}
+
+/* Headings in navy; the page title carries the tricolour accent bar the
+   slide decks and the app sidebar use. */
+h1, h2, h3, h4 { color: var(--taltech-navy); font-weight: 700; }
+.content main > h1:first-of-type {
+  padding-bottom: 0.35em;
+  position: relative;
+}
+.content main > h1:first-of-type::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 72px; height: 5px;
+  background: linear-gradient(90deg,
+    var(--taltech-magenta) 0 33%,
+    var(--taltech-burgundy) 33% 66%,
+    var(--taltech-navy) 66% 100%);
+}
+
+/* Sidebar: navy ground, magenta marker on the active chapter. */
+.chapter li.chapter-item { line-height: 1.9; }
+.chapter a.active {
+  color: var(--sidebar-active);
+  font-weight: 700;
+}
+.chapter a.active::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  margin-right: 8px;
+  background: var(--taltech-magenta);
+}
+
+/* Menu bar title in navy bold. */
+.menu-title { color: var(--taltech-navy); font-weight: 700; }
+
+/* Tables: flat CVI look. */
+.light table thead th { color: #342b60; border-bottom: 2px solid #342b60; }
+
+/* Blockquotes get the magenta spine. */
+.light blockquote { border-inline-start: 4px solid var(--taltech-magenta); border-block-start: none; border-block-end: none; }
